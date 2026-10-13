@@ -45,7 +45,7 @@ const PROJECTS = [
   {
     icon: "lock",
     accent: 3,
-    name: "Limpiar Metadatos IA",
+    name: "Metadata Cleaner",
     kind: "Privacy tool · open source",
     lines: [
       "Browser-only tool that strips metadata from Word, Excel, PowerPoint, PDF and image",
