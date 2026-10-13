@@ -16,7 +16,7 @@ const STATUS = "Open to internships and junior roles";
 const FOCUS = [
   { icon: "spark", accent: 0, title: "AI", lines: ["AI-powered products and", "AI-assisted engineering."], note: "see AiProvid" },
   { icon: "lock", accent: 3, title: "Security", lines: ["Hardening what I ship: CSP,", "CSRF, rate limits, validation."], note: "secure by default" },
-  { icon: "prompt", accent: 5, title: "Build", lines: ["Games, SaaS and research", "tools, UI to database."], note: "3 projects below" },
+  { icon: "prompt", accent: 5, title: "Build", lines: ["Games, SaaS and research", "tools, UI to database."], note: "4 projects below" },
 ];
 
 const PROJECTS = [
@@ -41,6 +41,17 @@ const PROJECTS = [
       "Product app with authentication, plus an animated waitlist landing page.",
     ],
     stack: "React · Vite · Next.js · Clerk · GSAP · Tailwind CSS",
+  },
+  {
+    icon: "lock",
+    accent: 3,
+    name: "Limpiar Metadatos IA",
+    kind: "Privacy tool · open source",
+    lines: [
+      "Browser-only tool that strips metadata from Word, Excel, PowerPoint, PDF and image",
+      "files: author, dates, EXIF, GPS, C2PA. Nothing is uploaded; it all runs locally.",
+    ],
+    stack: "HTML · JavaScript · JSZip · pdf-lib",
   },
   {
     icon: "cursor",
@@ -208,7 +219,7 @@ function projects() {
   <rect x="8" y="${y + rowH - 1}" width="${W - 20}" height="1.5" fill="${i === PROJECTS.length - 1 ? C.ink : C.hair}"/>`;
   });
   const fy = top + PROJECTS.length * rowH;
-  rows += `<text x="${W / 2}" y="${fy + 20}" text-anchor="middle" class="mono gray" style="font-size:11.5px">${PROJECTS.length} items · private source, walkthrough on request</text>`;
+  rows += `<text x="${W / 2}" y="${fy + 20}" text-anchor="middle" class="mono gray" style="font-size:11.5px">${PROJECTS.length} items · private source unless marked, walkthrough on request</text>`;
   const body = win(8, 8, W - 20, H - 20, "Projects", rows);
   return svg(H, `Projects: ${PROJECTS.map((p) => `${p.name} (${p.kind}) — ${p.lines.join(" ")}`).join(" ")}`, body);
 }
